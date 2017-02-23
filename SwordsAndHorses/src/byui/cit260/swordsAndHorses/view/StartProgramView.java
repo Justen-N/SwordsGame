@@ -7,7 +7,6 @@ package byui.cit260.swordsAndHorses.view;
 
 import byui.cit260.swordsAndHorses.control.GameControl;
 import byui.cit260.swordsAndHorses.model.Player;
-import byui.cit260.swordsAndHorses.model.SwordsAndHorses;
 import java.util.Scanner;
 
 /**
