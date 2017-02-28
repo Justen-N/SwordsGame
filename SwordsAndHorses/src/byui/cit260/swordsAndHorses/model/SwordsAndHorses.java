@@ -17,6 +17,8 @@ import byui.cit260.swordsAndHorses.view.StartProgramView;
 public class SwordsAndHorses {
     private static Game currentGame;
     private static Player player; 
+    private static CharacterTrait playerClass;
+    
     /**
      * @param args the command line arguments
      */
