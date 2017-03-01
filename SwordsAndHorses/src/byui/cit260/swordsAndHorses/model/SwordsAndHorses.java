@@ -27,11 +27,6 @@ public class SwordsAndHorses {
         Start.displayStartProgramView();
         
         
-      
-       
-       
-       
-       
     }   
 
     public static Game getCurrentGame() {
