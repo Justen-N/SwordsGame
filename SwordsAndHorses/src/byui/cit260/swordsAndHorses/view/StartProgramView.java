@@ -13,9 +13,10 @@ import java.util.Scanner;
  *
  * @author andre_000
  */
-public class StartProgramView {
+public final class StartProgramView {
     
-    private String promptMessage;
+    private final String promptMessage;
+    private String name;
     
     public StartProgramView(){ 
         
@@ -117,8 +118,8 @@ public class StartProgramView {
 
     private void displayNextView(Player player) {
         System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-                         + "\n Welcome to the game " + player.getName()
-                         + "\n We hope you have a lot of fun!"
+                         + "\n Welcome to the game " + name +
+                           "\n We hope you have a lot of fun!"
                          + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                          );
         

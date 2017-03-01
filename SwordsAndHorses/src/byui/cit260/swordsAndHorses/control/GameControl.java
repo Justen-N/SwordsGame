@@ -22,7 +22,7 @@ public class GameControl {
         }
          
         Player player = new Player();
-        player.setName(name);
+        
         
         SwordsAndHorses.setPlayer(player);
         
