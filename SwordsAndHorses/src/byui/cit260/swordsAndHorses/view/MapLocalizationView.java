@@ -12,18 +12,11 @@ import java.util.Scanner;
  * @author Justen
  */
 public class MapLocalizationView {
-   
-    
 
-/*
- *
- * @author andre_000
- */
-public class HelpMenuView {
     
     private String menu;
     
-    public HelpMenuView() {
+    public MapLocalizationView() {
         
         this.menu = "\n"
                   + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -82,17 +75,17 @@ public class HelpMenuView {
         
         switch (choice) {
             
-            case "G":
-                this.goalOfTheGame();
+            case "N":
+                this.moveNorth();
                 break;
-            case "M":
-                this.howToMove();
+            case "E":
+                this.moveEast();
                 break;
-            case "D":
-                this.howToDecide();
+            case "S":
+                this.moveSouth();
                 break;
-            case "C":
-                this.howCombatWorks();
+            case "W":
+                this.moveWest();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -103,22 +96,21 @@ public class HelpMenuView {
         
         
     }
+       private void moveNorth() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
 
-    private void goalOfTheGame() {
-        System.out.println("\n*** goalOfTheGame function called ***");
-    }
+        private void moveEast() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
 
-    private void howToMove() {
-        System.out.println("\n*** howToMove function called ***");
-    }
+        private void moveSouth() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
 
-    private void howToDecide() {
-        System.out.println("\n*** howToDecide function called ***");
-    }
-
-    private void howCombatWorks() {
-        System.out.println("\n*** howCombatWorks function called ***");
-    }
+        private void moveWest() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
 
     
 
@@ -127,4 +119,3 @@ public class HelpMenuView {
     
 }
 
-}
