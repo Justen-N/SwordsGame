@@ -24,7 +24,7 @@ public class SwordsAndHorses {
      */
     public static void main(String[] args) {
         StartProgramView Start= new StartProgramView();
-        Start.displayStartProgramView();
+        Start.display();
         
         
     }   

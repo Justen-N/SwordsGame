@@ -7,20 +7,19 @@ package byui.cit260.swordsAndHorses.view;
 
 import byui.cit260.swordsAndHorses.control.GameControl;
 import byui.cit260.swordsAndHorses.model.SwordsAndHorses;
-import java.util.Scanner;
 
 
 /**
  *
  * @author andre_000
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
-    private String menu;
+   
     
     public MainMenuView() {
         
-        this.menu = "\n"
+        super( "\n"
                   + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                   + "\n| Main Menu                              |"
                   + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -29,49 +28,10 @@ public class MainMenuView {
                   + "\nH - Get help on how to play the game"
                   + "\nS - Save game"
                   + "\nQ - Quit"
-                  + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+                  + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
-    
-    
-    
-
-    public void displayMainMenuView() {
-        
-        boolean done = false;
-        do{
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid) {
-            System.out.println("\n" + this.menu);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }   
-            
-            break;           
-        }
-        
-        return value;
-    }
-
-    public boolean doAction(String choice) {
+    @Override
+     public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();
         
@@ -93,34 +53,40 @@ public class MainMenuView {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-                        
+
+        
         return false;
         
         
     }
-
+   
     private void startNewGame() {
         GameControl.createNewGame(SwordsAndHorses.getPlayer());
-        
+   
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-        
-    }
-
+        gameMenu.display();   
+    }    
+      
     private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
+  System.out.println("* startExistingGame function called ***");
     }
-
     private void displayHelpMenu() {
-        //System.out.println("*** displayHelpMenu function called ***");
-        HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
-        
-    }
-
+  //System.out.println("* displayHelpMenu function called ***");
+  HelpMenuView helpMenuView = new HelpMenuView();
+  helpMenuView.display();
+   
+  }
+    
     private void saveGame() {
-        System.out.println("*** saveGame function called ***");
+  System.out.println("* saveGame function called ***");
+  }
+    
+    
+
+    
+
+    //private void saveGame() {
+    //    System.out.println("*** saveGame function called ***");
     }
     
 
-}

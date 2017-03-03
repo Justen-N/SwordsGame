@@ -9,11 +9,17 @@ package byui.cit260.swordsAndHorses.view;
  *
  * @author andre_000
  */
-public class GameMenuView {
+public class GameMenuView extends View{
 
-    void displayMenu() {
+    @Override
+    public void display() {
         System.out.println("\n*** displayMenu stub function called ***");
         
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
  

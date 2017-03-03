@@ -11,14 +11,14 @@ import java.util.Scanner;
  *
  * @author Justen
  */
-public class MapLocalizationView {
+public class MapLocalizationView extends View{
 
     
-    private String menu;
+    
     
     public MapLocalizationView() {
         
-        this.menu = "\n"
+        super( "\n"
                   + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                   + "\n| Movement Menu                          |"
                   + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -27,17 +27,17 @@ public class MapLocalizationView {
                   + "\nW - Move West"
                   + "\nN - Move North"
                   + "\nQ - Quit"
-                  + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+                  + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
     
     
     
-
-    public void displayHelpMenuView() {
+    @Override
+    public void display() {
         
         boolean done = false;
         do{
-            String menuOption = this.getMenuOption();
+            String menuOption = this.getInput();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
             
@@ -46,14 +46,14 @@ public class MapLocalizationView {
         } while (!done);
         
     }
-
-    private String getMenuOption() {
+    @Override
+    public String getInput() {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
         
         while (!valid) {
-            System.out.println("\n" + this.menu);
+            System.out.println("\n" + this.displayMessage);
             
             value = keyboard.nextLine();
             value = value.trim();
@@ -68,7 +68,8 @@ public class MapLocalizationView {
         
         return value;
     }
-
+    
+    @Override
     public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();

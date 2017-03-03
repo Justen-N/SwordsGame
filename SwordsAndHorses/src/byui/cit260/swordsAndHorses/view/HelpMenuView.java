@@ -11,13 +11,12 @@ import java.util.Scanner;
  *
  * @author andre_000
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
     
-    private String menu;
     
     public HelpMenuView() {
         
-        this.menu = "\n"
+        super(  "\n"
                   + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                   + "\n| Help Menu                              |"
                   + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -26,17 +25,18 @@ public class HelpMenuView {
                   + "\nD - How to make a decision"
                   + "\nC - How combat works"
                   + "\nQ - Quit"
-                  + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+                  + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        
     }
     
     
     
-
-    public void displayHelpMenuView() {
+    @Override
+    public void display() {
         
         boolean done = false;
         do{
-            String menuOption = this.getMenuOption();
+            String menuOption = this.getInput();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
             
@@ -45,14 +45,14 @@ public class HelpMenuView {
         } while (!done);
         
     }
-
-    private String getMenuOption() {
+    @Override
+    public String getInput() {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
         
         while (!valid) {
-            System.out.println("\n" + this.menu);
+            System.out.println("\n" + this.displayMessage);
             
             value = keyboard.nextLine();
             value = value.trim();
@@ -67,7 +67,7 @@ public class HelpMenuView {
         
         return value;
     }
-
+    @Override
     public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();

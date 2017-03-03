@@ -12,17 +12,17 @@ import java.util.Scanner;
  *
  * @author Eduardo
  */
-public class MisteryTowerView {
-    
-private String Menu;
+public class MisteryTowerView extends View{
 
+    /*public void MisteryTowerView(){*/
+    public MisteryTowerView(String message) {
+        super("Welcome to the Mistery Tower. Would you like to enter the tower and see what is inside?"
+     +"\n*** Y = Yes, N = No");
+    }
+    
 
-    
- public void displayMisteryTowerView() {
-    
-     this.Menu = "Welcome to the Mistery Tower. Would you like to enter the tower and see what is inside?"
-     +"\n*** Y = Yes, N = No";
-     
+     @Override
+    public void display() {
         boolean done = false;
         do{
             String menuOption = this.getInput();
@@ -34,11 +34,23 @@ private String Menu;
         
     }
 
-private boolean doAction(String menuOption) {
-System.out.println("\n*** doAction() function called ***");
-return true;
+@Override
+public boolean doAction(String menuOption) {
+        String choice = menuOption.toUpperCase();
+    switch (choice) {
+        case "Y": 
+            
+        break;
+        case "N":
+            System.out.println("\n Not implemented yet");
+        default:
+            System.out.println("\n***Invalid selection*** Try again");
+        break;
+}
+    return false;
 }
 
+@Override
 public String getInput() {
 
 Scanner keyboard = new Scanner(System.in);
@@ -62,18 +74,6 @@ while (!valid) {
 return selection;// return the name
 }
 
-public void doAction(char choice){
-    switch (choice) {
-case 'Y': //create start new game
-        //MisteryTower.displayScene1();
-        System.out.println("\n Not implemented yet");
-        break;
-case 'N':
-        System.out.println("\n Not implemented yet");
-       default:
-        System.out.println("\n***Invalid selection*** Try again");
-        break;
-}
+   
 
-}
 }

@@ -13,25 +13,18 @@ import java.util.Scanner;
  *
  * @author andre_000
  */
-public final class StartProgramView {
+public final class StartProgramView extends View {
     
     private final String promptMessage;
     private String name;
     
     public StartProgramView(){ 
         
-    this.promptMessage = "Please enter your name:";
+    //this.promptMessage = "Please enter your name:";
     
-    this.displayBanner();
-    
-    this.getPlayersName();
-    
-
-    }
-
-    public void displayBanner() {
+   
           
-        System.out.println(
+        super(
                  "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                + "\n~                                                     ~"
                + "\n~ This is the game of Swords & Horses. You are about  ~"
@@ -54,15 +47,17 @@ public final class StartProgramView {
                + "\n~                                                     ~"
                + "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"        
                );
+    this.promptMessage = "Please enter your name:";
     }
-
-    public void displayStartProgramView() {
+    
+    @Override
+      public void display() {
         //System.out.println("\n*** displayStartProgram() function called***");
         
         boolean done = false;
         
         do {
-            String playersName = this.getPlayersName();
+            String playersName = this.getInput();
             if (playersName.toUpperCase().equals("Q"))
                 return;
             
@@ -72,7 +67,8 @@ public final class StartProgramView {
         
     }
 
-    private String getPlayersName() {
+    @Override
+    public String getInput() {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
@@ -93,8 +89,8 @@ public final class StartProgramView {
         
         return value;
     }
-
-    private boolean doAction(String playersName) {
+    @Override
+    public boolean doAction(String playersName) {
         
         if (playersName.length() < 2) {
             System.out.println("\nInvalid players name: "
@@ -125,7 +121,7 @@ public final class StartProgramView {
         
         MainMenuView mainMenuView = new MainMenuView();
                 
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
         
         
         

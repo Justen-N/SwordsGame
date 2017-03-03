@@ -9,17 +9,20 @@ package byui.cit260.swordsAndHorses.view;
  *
  * @author Eduardo y Sandra
  */
-class MisteryTower {
-    private String Menu;
+class MisteryTower extends View{
+    
 
 
     
- public void displayScene1() {
+ public MisteryTower() {
     
-     this.Menu = "Welcome to the Mistery Tower. Would you like to enter the tower and see what is inside?"
-     +"\n*** Y = Yes, N = No";
-      
-        boolean done = false;
+     super("Welcome to the Mistery Tower. Would you like to enter the tower and see what is inside?"
+     +"\n*** Y = Yes, N = No");
+ } 
+    
+ @Override
+ public void display(){
+ boolean done = false;
         do{
             String menuOption = this.getInput();
             
@@ -30,11 +33,12 @@ class MisteryTower {
         
     }
 
-    private String getInput() {
+ @Override
+    public String getInput() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    private boolean doAction(String menuOption) {
+    @Override
+    public boolean doAction(String menuOption) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
