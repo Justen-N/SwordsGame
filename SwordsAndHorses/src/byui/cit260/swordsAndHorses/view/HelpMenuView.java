@@ -31,42 +31,7 @@ public class HelpMenuView extends View {
     
     
     
-    @Override
-    public void display() {
-        
-        boolean done = false;
-        do{
-            String menuOption = this.getInput();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
-    }
-    @Override
-    public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid) {
-            System.out.println("\n" + this.displayMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }   
-            
-            break;           
-        }
-        
-        return value;
-    }
+
     @Override
     public boolean doAction(String choice) {
         

@@ -45,6 +45,14 @@ public class SwordsAndHorses {
         SwordsAndHorses.player = player;
     }
 
+    public static CharacterTrait getPlayerClass() {
+        return playerClass;
+    }
+
+    public static void setPlayerClass(CharacterTrait playerClass) {
+        SwordsAndHorses.playerClass = playerClass;
+    }
+
     
 
     
