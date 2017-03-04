@@ -11,17 +11,50 @@ package byui.cit260.swordsAndHorses.view;
  */
 public class GameMenuView extends View{
 
-    @Override
-    public void display() {
-        System.out.println("\n*** displayMenu stub function called ***");
-        
+    public GameMenuView() {
+        super("\n WE're using this a a temporary location"
+        +"\n C will call the combatView class"
+                + "Q will quit"
+                + "nothing else works right now.");
     }
 
     @Override
     public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        String choice = value.toUpperCase();
+        
+        switch (choice) {
+            
+            case "C":
+                this.combat();
+                break;
+                default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }
+
+        
+        return false;
+        
+        
     }
+
+    private void combat() {
+        CombatView combatView= new CombatView("the ogre attacks!"+"\n what do you do?"
+                + "\nM = Attack with a melee weapon"
+                + "\nP = Attack with magic"
+                + "\nR = Attack with a ranged weapon"
+                + "\nF = Run Away!!"
+                + "\nH= Help Menu");
+                
+        combatView.display();
+        
+    }
+    }
+  
+    
+
+
+   
     
  
-}
-    
