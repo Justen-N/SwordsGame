@@ -5,14 +5,8 @@
  */
 package byui.cit260.swordsAndHorses.control;
 
-import byui.cit260.swordsAndHorses.model.Inventory;
-import byui.cit260.swordsAndHorses.model.Map;
 import byui.cit260.swordsAndHorses.model.Player;
 import byui.cit260.swordsAndHorses.model.SwordsAndHorses;
-import byui.cit260.swordsAndHorses.model.Game;
-import byui.cit260.swordsAndHorses.model.Location;
-import byui.cit260.swordsAndHorses.model.Scene;
-import byui.cit260.swordsAndHorses.model.SceneType;
 
 
 /**
@@ -37,31 +31,8 @@ public class GameControl {
         }
 
     public static void createNewGame(Player player) {
-      Game game= new Game();
-      SwordsAndHorses.setCurrentGame(game);
-      game.setPlayer(player);
-     Inventory inventory= new Inventory();
-     game.setInventory(inventory);
-     Map map=MapControl.createMap();
-     game.setMap(map);
-     MapControl.moveActorsToStart(map);
-     
-     
-     
-     
+       System.out.println("\n*** createNewGame stub function called ***");
        
-    }
-
-    static void assignScenesToLocations(Map map, Scene[] scenes) {
-        Location[][] locations = map.getLocations();
-        locations[0][0].setScene(scenes[SceneType.throneRoom.ordinal()]);
-        locations[0][1].setScene(scenes[SceneType.starterZone.ordinal()]);
-        locations[0][2].setScene(scenes[SceneType.misteryTower.ordinal()]);
-        locations[0][3].setScene(scenes[SceneType.ogreIsland.ordinal()]);
-        locations[0][4].setScene(scenes[SceneType.magiciansHut.ordinal()]);
-        locations[0][5].setScene(scenes[SceneType.dragonCave.ordinal()]);
-        
-        
     }
 }
     

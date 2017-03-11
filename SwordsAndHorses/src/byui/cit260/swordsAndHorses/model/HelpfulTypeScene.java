@@ -5,46 +5,38 @@
  */
 package byui.cit260.swordsAndHorses.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Justen
  */
-public class Inventory {
-   private int spaces;
-   private int gold;
+public class HelpfulTypeScene extends Scene implements Serializable{
+    private boolean randomBonus;
 
-    public Inventory() {
+    public HelpfulTypeScene(boolean giveItem) {
+        this.randomBonus = giveItem;
     }
 
-   
-   
-    public int getSpaces() {
-        return spaces;
+    
+    public boolean isRandomBonus() {
+        return randomBonus;
     }
 
-    public void setSpaces(int spaces) {
-        this.spaces = spaces;
-    }
-
-    public int getGold() {
-        return gold;
-    }
-
-    public void setGold(int gold) {
-        this.gold = gold;
+    public void setRandomBonus(boolean randomBonus) {
+        this.randomBonus = randomBonus;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + this.spaces;
-        hash = 47 * hash + this.gold;
+        int hash = 3;
+        hash = 41 * hash + (this.randomBonus ? 1 : 0);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Inventory{" + "spaces=" + spaces + ", gold=" + gold + '}';
+        return "HelpfulTypeScene{" + "giveItem=" + randomBonus + '}';
     }
 
     @Override
@@ -58,16 +50,13 @@ public class Inventory {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Inventory other = (Inventory) obj;
-        if (this.spaces != other.spaces) {
-            return false;
-        }
-        if (this.gold != other.gold) {
+        final HelpfulTypeScene other = (HelpfulTypeScene) obj;
+        if (this.randomBonus != other.randomBonus) {
             return false;
         }
         return true;
     }
-   
-   
+    
+    
     
 }

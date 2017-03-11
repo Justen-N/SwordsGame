@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Location implements Serializable{
     private int row;
     private int column;
-    private boolean hasItem;
+    private int hasItem;
 
     public Location() {
     }
@@ -36,24 +36,22 @@ public class Location implements Serializable{
         this.column = column;
     }
 
-    public boolean getHasItem() {
+    public int getHasItem() {
         return hasItem;
     }
 
-    public void setHasItem(boolean hasItem) {
+    public void setHasItem(int hasItem) {
         this.hasItem = hasItem;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 13 * hash + this.row;
-        hash = 13 * hash + this.column;
-        hash = 13 * hash + (this.hasItem ? 1 : 0);
+        int hash = 7;
+        hash = 37 * hash + this.row;
+        hash = 37 * hash + this.column;
+        hash = 37 * hash + this.hasItem;
         return hash;
     }
-
-    
 
     @Override
     public String toString() {
@@ -82,10 +80,6 @@ public class Location implements Serializable{
             return false;
         }
         return true;
-    }
-
-    public void setScene(Scene scene) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author Justen
  */
-public class Game implements Serializable{
+class Game implements Serializable{
     private String winCondition;
     private Inventory inventory;
     private Player player;
@@ -19,6 +19,7 @@ public class Game implements Serializable{
 
     public Game() {
     }
+    
 
     public String getWinCondition() {
         return winCondition;
@@ -35,26 +36,6 @@ public class Game implements Serializable{
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    public Map getMap() {
-        return map;
-    }
-
-    public void setMap(Map map) {
-        this.map = map;
-    }
-    
-
-
-  
     
     
 }
