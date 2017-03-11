@@ -5,163 +5,68 @@
  */
 package byui.cit260.swordsAndHorses.model;
 
-import java.io.Serializable;
-import java.util.Objects;
-
 /**
  *
  * @author Gavin Siegel
  */
-public class CharacterTrait implements Serializable {
-    public String type;
-    private double strength;
-    private double wisdom;
-    private double dexterity;
-    private double health;
-    private double mana;
-    private double coordinateX;
-    private double coordinateY;
-    private double defenseValue;
-public CharacterTrait() {
-    }
+public enum CharacterTrait  {
+    ranger(1,3,5,50,10,1,1,15),
+    warrior(5,3,1,75,10,1,1,17),
+    wizard(1,5,3,35,30,1,1,14),
+    ogre(5,1,1,80,0,1,1,18),
+    goblin(2,2,2,10,5,1,1,10),
+    dragon(5,5,5,100,50,15,15,30),
+    
+    ;
+    private final double strength;
+    private final double wisdom;
+    private final double dex;
+    private final double health;
+    private final double mana;
+    private final double coordX;
+    private final double coordY;
+    private final double defenseValue;
+   
+
+CharacterTrait(double strength, double wisdom, double dex, double health, double mana, double coordX, double coordY,double defenseValue) {
+    this.strength=strength;
+    this.wisdom= wisdom;
+    this.dex= dex;
+    this.health=health;
+    this.coordX=coordX;
+    this.coordY=mana;
+    this.mana=mana;
+    this.defenseValue=defenseValue;
+}
 
     public double getDefenseValue() {
         return defenseValue;
     }
-
-    public void setDefenseValue(double defenseValue) {
-        this.defenseValue = defenseValue;
-    }
-    
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public double getStrength() {
         return strength;
-    }
-
-    public void setStrength(double strength) {
-        this.strength = strength;
     }
 
     public double getWisdom() {
         return wisdom;
     }
-
-    public void setWisdom(double wisdom) {
-        this.wisdom = wisdom;
-    }
-
-    public double getDexterity() {
-        return dexterity;
-    }
-
-    public void setDexterity(double dexterity) {
-        this.dexterity = dexterity;
+    
+    public double getDex() {
+        return dex;
     }
 
     public double getHealth() {
         return health;
     }
 
-    public void setHealth(double health) {
-        this.health = health;
-    }
-
     public double getMana() {
         return mana;
     }
 
-    public void setMana(double mana) {
-        this.mana = mana;
-    }
-
     public double getCoordinateX() {
-        return coordinateX;
-    }
-
-    public void setCoordinateX(double coordinateX) {
-        this.coordinateX = coordinateX;
-    }
-
-    public double getCoordinateY() {
-        return coordinateY;
-    }
-
-    public void setCoordinateY(double coordinateY) {
-        this.coordinateY = coordinateY;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 47 * hash + Objects.hashCode(this.type);
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.strength) ^ (Double.doubleToLongBits(this.strength) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.wisdom) ^ (Double.doubleToLongBits(this.wisdom) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.dexterity) ^ (Double.doubleToLongBits(this.dexterity) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.health) ^ (Double.doubleToLongBits(this.health) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.mana) ^ (Double.doubleToLongBits(this.mana) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.coordinateX) ^ (Double.doubleToLongBits(this.coordinateX) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.coordinateY) ^ (Double.doubleToLongBits(this.coordinateY) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "CharacterTrait{" + "type=" + type + ", strength=" + strength + ", wisdom=" + wisdom + ", dexterity=" + dexterity + ", health=" + health + ", mana=" + mana + ", coordinateX=" + coordinateX + ", coordinateY=" + coordinateY + '}';
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final CharacterTrait other = (CharacterTrait) obj;
-        if (Double.doubleToLongBits(this.strength) != Double.doubleToLongBits(other.strength)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.wisdom) != Double.doubleToLongBits(other.wisdom)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.dexterity) != Double.doubleToLongBits(other.dexterity)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.health) != Double.doubleToLongBits(other.health)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.mana) != Double.doubleToLongBits(other.mana)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.coordinateX) != Double.doubleToLongBits(other.coordinateX)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.coordinateY) != Double.doubleToLongBits(other.coordinateY)) {
-            return false;
-        }
-        if (!Objects.equals(this.type, other.type)) {
-            return false;
-        }
-        return true;
+        return coordX;
     }
     
-    
-
-   
-
-   
-   
+    public double getCoordY() {
+        return coordY;
     }
-    
-
-  
+ }
