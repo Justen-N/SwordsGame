@@ -5,8 +5,6 @@
  */
 package byui.cit260.swordsAndHorses.control;
 
-import java.util.Scanner;
-
 /**
  *
  * @author andre_000
@@ -49,25 +47,30 @@ public class SceneControl {
         
     }
 
-    public static int getStorySelection(int optionNumber) {
+    public static int getStorySelection(String optionNumber) {
         
             
-            String userInput;
-            
+            String userInput=optionNumber;
+            int choice=0;
             //modify code here to receive input from the user
-            userInput = "4";
+          
         
-            if (userInput == "1"){
-                optionNumber = 1;
-            } else if (userInput == "2"){
-                optionNumber = 2;
-            } else if (userInput == "3"){
-                optionNumber = 3;
-            } else {
+        switch (userInput) {
+            case "1":
+                 choice= 1;
+                break;
+            case "2":
+                choice = 2;
+                break;
+            case "3":
+                choice = 3;
+                break;
+            default:
                 System.out.println("Please enter a number 1, 2, or 3 to continue.");
-            }
+                break;
+        }
         
-            return optionNumber;
+            return choice;
             
            
         

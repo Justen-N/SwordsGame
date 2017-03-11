@@ -10,5 +10,6 @@ package byui.cit260.swordsAndHorses.control;
  * @author andre_000
  */
 public class InventoryControl {
-    
+    //create armor pieces
+   
 }

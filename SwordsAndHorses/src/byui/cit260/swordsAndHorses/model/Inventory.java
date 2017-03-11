@@ -15,9 +15,34 @@ public class Inventory {
    private int spaces;
    private int gold;
    ArrayList<Item> items= new ArrayList<>();
-   
+   private Weapon weapon;
+   ArrayList<Armor> armorPieces;
 
     public Inventory() {
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public ArrayList<Armor> getArmorPieces() {
+        return armorPieces;
+    }
+
+    public void setArmorPieces(ArrayList<Armor> armorPieces) {
+        this.armorPieces = armorPieces;
     }
 
    
