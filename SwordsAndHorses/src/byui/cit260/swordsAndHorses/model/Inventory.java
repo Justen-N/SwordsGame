@@ -5,6 +5,8 @@
  */
 package byui.cit260.swordsAndHorses.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Justen
@@ -12,6 +14,8 @@ package byui.cit260.swordsAndHorses.model;
 public class Inventory {
    private int spaces;
    private int gold;
+   ArrayList<Item> items= new ArrayList<>();
+   
 
     public Inventory() {
     }
