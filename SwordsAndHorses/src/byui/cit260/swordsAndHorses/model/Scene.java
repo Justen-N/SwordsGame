@@ -13,8 +13,9 @@ import java.util.Objects;
  * @author Justen
  */
 public class Scene implements Serializable{
+   
     private String description;
-    private int passable;
+    private boolean passable;
 
     public Scene() {
     }
@@ -27,28 +28,22 @@ public class Scene implements Serializable{
         this.description = description;
     }
 
-    public int getPassable() {
+    public boolean isPassable() {
         return passable;
     }
 
-    public void setPassable(int passable) {
+    public void setPassable(boolean passable) {
         this.passable = passable;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.description);
-        hash = 23 * hash + this.passable;
+        hash = 79 * hash + Objects.hashCode(this.description);
+        hash = 79 * hash + (this.passable ? 1 : 0);
         return hash;
     }
 
-    @Override
-    public String toString() {
-        return "Scene{" + "description=" + description + ", passable=" + passable + '}';
-    }
-    
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -70,6 +65,9 @@ public class Scene implements Serializable{
         return true;
     }
     
-    
+    @Override
+    public String toString() {
+        return "Scene{" + "description=" + description + ", passable=" + passable + '}';
+    }
     
 }

@@ -6,6 +6,7 @@
 package byui.cit260.swordsAndHorses.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,15 +15,59 @@ import java.io.Serializable;
 public class Map implements Serializable{
     private int hexRow;
     private int hexColumn;
+    private Location[][] locations;
+    private SceneType scene;
+    private ArrayList<CharacterTrait> characters;
+   
+    
+    public Map(int hexRow,int hexColumn) {
+        if (hexRow<1||hexColumn <1){System.out.println("the number of rows and Columns mustbe > zero");
+    }
+        this.hexRow=hexRow;
+        this.hexColumn=hexColumn;
+            
+            this.locations = new Location[hexRow][hexColumn];
+            for (int row=0;row<hexRow;row++){
+                for(int column=0; column<hexColumn; column++){
+                    Location location=new Location();
+                    location.setColumn(column);
+                    location.setRow(row);
+                    location.setHasItem(false);
+                    locations[row][column]= location;
+                }
+            }
 
-    public Map() {
     }
 
-    
-    
     public int getHexRow() {
         return hexRow;
     }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    public SceneType getScene() {
+        return scene;
+    }
+
+    public void setScene(SceneType scene) {
+        this.scene = scene;
+    }
+
+    public ArrayList<CharacterTrait> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(ArrayList<CharacterTrait> characters) {
+        this.characters = characters;
+    }
+    
+
 
     public void setHexRow(int hexRow) {
         this.hexRow = hexRow;
