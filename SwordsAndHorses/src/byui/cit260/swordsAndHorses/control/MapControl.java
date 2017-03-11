@@ -34,31 +34,43 @@ public class MapControl {
                 +"He tells you the story of the princess' curse. In order to cure her, the wizard needs a dragon's heart."
                 +"THe steward says the only way to obtain one is to kill a dragon in the Dragon Wilds.");
         throneRoom.setPassable(true);
+        throneRoom.setHasEnemy(false);
+        throneRoom.setHasPuzzle(false);
         scenes [SceneType.throneRoom.ordinal()]=throneRoom;
         
         Scene starterZone= new Scene();
         starterZone.setDescription("You have arrived in a small meadow" );
         starterZone.setPassable(true);
+        starterZone.setHasPuzzle(false);
+        starterZone.setHasPuzzle(true);
         scenes[SceneType.starterZone.ordinal()]=starterZone;
         
         Scene ogreIsland= new Scene();
         ogreIsland.setDescription("The island is covered in the bones of sheep and small mammals. the smell is tremendous.");
         ogreIsland.setPassable(false);
+        ogreIsland.setHasEnemy(true);
+        ogreIsland.setHasPuzzle(true);
         scenes[SceneType.ogreIsland.ordinal()]=ogreIsland;
         
         Scene dragonCave= new Scene();
         dragonCave.setDescription("the cave is dark and smells of sulfur.");
         dragonCave.setPassable(true);
+        dragonCave.setHasEnemy(true);
+        dragonCave.setHasPuzzle(false);
         scenes[SceneType.dragonCave.ordinal()]= dragonCave;
         
         Scene misteryTower=new Scene();
         misteryTower.setDescription(" You have arrived at the outside of a tall tower, covered in mystical signs");
         misteryTower.setPassable(true);
+        misteryTower.setHasPuzzle(true);
+        misteryTower.setHasEnemy(false);
         scenes[SceneType.misteryTower.ordinal()]=misteryTower;
         
         Scene magiciansHut= new Scene();
         magiciansHut.setDescription("you have arrived at a magicians hut. there is strange colored smoke rising from the chimney, and a large duck with a riding saddle outside.");
         magiciansHut.setPassable(true);
+        magiciansHut.setHasPuzzle(true);
+        magiciansHut.setHasEnemy(false);
         scenes[SceneType.magiciansHut.ordinal()]=magiciansHut;
         
     return scenes;

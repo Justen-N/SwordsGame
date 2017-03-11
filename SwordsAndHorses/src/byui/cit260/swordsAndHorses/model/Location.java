@@ -85,7 +85,7 @@ public class Location implements Serializable{
     }
 
     public void setScene(Scene scene) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("this is unsupported currently");
     }
     
     

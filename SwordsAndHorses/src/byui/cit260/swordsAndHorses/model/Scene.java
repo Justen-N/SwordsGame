@@ -16,6 +16,8 @@ public class Scene implements Serializable{
    
     private String description;
     private boolean passable;
+    private boolean hasPuzzle;
+    private boolean hasEnemy;
 
     public Scene() {
     }
@@ -34,6 +36,22 @@ public class Scene implements Serializable{
 
     public void setPassable(boolean passable) {
         this.passable = passable;
+    }
+
+    public boolean isHasPuzzle() {
+        return hasPuzzle;
+    }
+
+    public void setHasPuzzle(boolean hasPuzzle) {
+        this.hasPuzzle = hasPuzzle;
+    }
+
+    public boolean isHasEnemy() {
+        return hasEnemy;
+    }
+
+    public void setHasEnemy(boolean hasEnemy) {
+        this.hasEnemy = hasEnemy;
     }
 
     @Override
