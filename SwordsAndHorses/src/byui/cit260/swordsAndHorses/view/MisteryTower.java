@@ -39,7 +39,10 @@ class MisteryTower extends View{
     }
     @Override
     public boolean doAction(String menuOption) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (menuOption == "Y"){
+            
+        }
+        return true;
     }
 
 }

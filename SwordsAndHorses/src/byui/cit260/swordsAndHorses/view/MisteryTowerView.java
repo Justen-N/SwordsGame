@@ -6,6 +6,7 @@
 package byui.cit260.swordsAndHorses.view;
 
 import byui.cit260.swordsAndHorses.control.Puzzles;
+import byui.cit260.swordsAndHorses.model.SwordsAndHorses;
 import java.util.Scanner;
 
 /**
@@ -73,7 +74,5 @@ while (!valid) {
 
 return selection;// return the name
 }
-
-   
-
+ 
 }
