@@ -30,7 +30,7 @@ public class MapControl {
     private static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];
         Scene throneRoom= new Scene();
-        throneRoom.setDescription(" YOu enter an opulent throne room. the King sits in court, with a wizard and a steward in attendence"
+        throneRoom.setDescription(" You enter an opulent throne room. the King sits in court, with a wizard and a steward in attendence"
                 +"He tells you the story of the princess' curse. In order to cure her, the wizard needs a dragon's heart."
                 +"THe steward says the only way to obtain one is to kill a dragon in the Dragon Wilds.");
         throneRoom.setPassable(true);
