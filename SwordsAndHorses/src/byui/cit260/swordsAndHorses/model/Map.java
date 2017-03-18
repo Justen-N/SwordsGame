@@ -5,6 +5,7 @@
  */
 package byui.cit260.swordsAndHorses.model;
 
+import byui.cit260.swordsAndHorses.enums.SceneType;
 import java.io.Serializable;
 import java.util.ArrayList;
 
