@@ -5,17 +5,14 @@
  */
 package byui.cit260.swordsAndHorses.model;
 
-/**
- *
- * @author Gavin Siegel
- */
+
 public enum CharacterTrait  {
-    ranger(1,3,5,50,10,1,1,15),
-    warrior(5,3,1,75,10,1,1,17),
-    wizard(1,5,3,35,30,1,1,14),
-    ogre(5,1,1,80,0,1,1,18),
-    goblin(2,2,2,10,5,1,1,10),
-    dragon(5,5,5,100,50,15,15,30),
+    ranger,
+    warrior,
+    wizard,
+    ogre,
+    goblin,
+    dragon,
     
     ;
     private final double strength;
