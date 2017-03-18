@@ -6,8 +6,11 @@
 package byui.cit260.swordsAndHorses.view;
 
 import byui.cit260.swordsAndHorses.control.GameControl;
+import byui.cit260.swordsAndHorses.exceptions.GameControlExceptions;
 import byui.cit260.swordsAndHorses.model.Player;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -98,7 +101,12 @@ public final class StartProgramView extends View {
         return false;
         }
         
-        Player player = GameControl.createPlayer(playersName);
+        Player player = null;
+        try {
+            player = GameControl.createPlayer(playersName);
+        } catch (GameControlExceptions ex) {
+            Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         if (player == null) {
             System.out.println("\nError creating the player.");
