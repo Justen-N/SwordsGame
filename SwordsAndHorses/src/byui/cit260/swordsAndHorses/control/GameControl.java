@@ -5,6 +5,7 @@
  */
 package byui.cit260.swordsAndHorses.control;
 
+import byui.cit260.swordsAndHorses.exceptions.GameControlExceptions;
 import byui.cit260.swordsAndHorses.model.Inventory;
 import byui.cit260.swordsAndHorses.model.Map;
 import byui.cit260.swordsAndHorses.model.Player;
@@ -21,10 +22,10 @@ import byui.cit260.swordsAndHorses.model.SceneType;
  */
 public class GameControl {
 
-    public static Player createPlayer(String name) {
+    public static Player createPlayer(String name) throws GameControlExceptions {
        
         if (name == null) {
-            return null;
+           throw new GameControlExceptions("name cannot be blank");
         }
          
         Player player = new Player();

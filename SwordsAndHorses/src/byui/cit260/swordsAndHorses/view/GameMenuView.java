@@ -31,7 +31,10 @@ public class GameMenuView extends View{
                 default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
-        }
+        
+                case "M":
+                this.movement();
+                break;}
 
         
         return false;
@@ -48,6 +51,11 @@ public class GameMenuView extends View{
                 + "\nH= Help Menu");
                 
         combatView.display();
+        
+    }
+
+    private void movement() {
+        SceneView sceneView=new SceneView();
         
     }
     }
