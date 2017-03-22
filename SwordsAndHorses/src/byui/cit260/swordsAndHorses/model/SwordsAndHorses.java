@@ -5,6 +5,7 @@
  */
 package byui.cit260.swordsAndHorses.model;
 
+import byui.cit260.swordsAndHorses.enums.CharacterTrait;
 import byui.cit260.swordsAndHorses.view.StartProgramView;
 
 
