@@ -10,9 +10,6 @@ package byui.cit260.swordsAndHorses.control;
  * @author Eduardo y Sandra
  */
 
-import static byui.cit260.swordsAndHorses.model.SwordsAndHorses.main;
-import static java.lang.Math.PI;
-
 public class Puzzles {
 
     
