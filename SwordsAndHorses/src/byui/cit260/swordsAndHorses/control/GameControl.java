@@ -13,7 +13,7 @@ import byui.cit260.swordsAndHorses.model.SwordsAndHorses;
 import byui.cit260.swordsAndHorses.model.Game;
 import byui.cit260.swordsAndHorses.model.Location;
 import byui.cit260.swordsAndHorses.model.Scene;
-import byui.cit260.swordsAndHorses.model.SceneType;
+import byui.cit260.swordsAndHorses.enums.SceneType;
 
 
 /**

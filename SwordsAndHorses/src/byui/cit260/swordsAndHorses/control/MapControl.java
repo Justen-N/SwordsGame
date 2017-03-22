@@ -7,7 +7,7 @@ package byui.cit260.swordsAndHorses.control;
 
 import byui.cit260.swordsAndHorses.model.Map;
 import byui.cit260.swordsAndHorses.model.Scene;
-import byui.cit260.swordsAndHorses.model.SceneType;
+import byui.cit260.swordsAndHorses.enums.SceneType;
 
 /**
  *

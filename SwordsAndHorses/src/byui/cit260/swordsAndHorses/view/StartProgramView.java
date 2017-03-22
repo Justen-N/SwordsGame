@@ -55,7 +55,7 @@ public final class StartProgramView extends View {
     
     @Override
       public void display() {
-        //System.out.println("\n*** displayStartProgram() function called***");
+        System.out.println("\n*** displayStartProgram() function called***");
         
         boolean done = false;
         
